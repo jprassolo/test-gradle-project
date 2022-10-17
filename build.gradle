@@ -1,6 +1,12 @@
 buildscript {
     repositories {
-        jcenter()
+        maven {
+            url 'http://artefac01adl.claro.amx:8081/artifactory/gradle-virtual'
+            credentials {
+                username = "${artifactory_user}"
+                password = "${artifactory_password}"
+            }
+        }
         
     }
     dependencies {
@@ -17,7 +23,7 @@ artifactory {
     contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
         repository {
-            repoKey = 'amb-testing-gradle-gradle-dev-local'
+            repoKey = 'local-gradle'
             username = "${artifactory_user}"
             password = "${artifactory_password}"
             maven = true
