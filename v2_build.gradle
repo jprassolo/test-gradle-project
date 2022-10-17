@@ -26,7 +26,7 @@ artifactory {
     }
     resolve {
         repository {
-            repoKey = 'gradle-virtual'
+            repoKey = 'amb-testing-gradle-gradle-dev'
             username = "${artifactory_user}"
             password = "${artifactory_password}"
             maven = true
