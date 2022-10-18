@@ -74,5 +74,4 @@ artifactory {
             // Publish generated POM files to Artifactory (true by default)
             publishPom = true
         }
-    }
 }
