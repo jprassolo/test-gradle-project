@@ -16,7 +16,7 @@
 
 buildscript {
   repositories {
-    mavenCentral()
+    //mavenCentral()
     maven {
           url "http://artefac01adl.claro.amx:8082/artifactory/prassolo-gradle-dev/"
           allowInsecureProtocol = true
