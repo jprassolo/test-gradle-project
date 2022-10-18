@@ -13,7 +13,7 @@ buildscript {
 }
 
 allprojects {
-    //apply plugin: "com.jfrog.artifactory"
+    apply plugin: "com.jfrog.artifactory"
     maven {
             url "http://artefac01adl.claro.amx:8082/artifactory/prassolo-gradle-dev"
             //allowInsecureProtocol = true
