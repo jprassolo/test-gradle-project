@@ -1,8 +1,8 @@
 buildscript {
     repositories {
         maven {
-            url "http://artefac01adl.claro.amx:8082/artifactory/jcenter"
-            allowInsecureProtocol = true
+                url "http://artefac01adl.claro.amx:8082/artifactory/jcenter"
+                allowInsecureProtocol = true
         }    
     }
     dependencies {
