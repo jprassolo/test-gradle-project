@@ -19,8 +19,6 @@ buildscript {
         mavenCentral()
         maven {
                 url "http://artefac01adl.claro.amx:8082/artifactory/prassolo-gradle-dev/"
-                username = "${artifactory_user}"
-                password = "${artifactory_password}"
                 allowInsecureProtocol = true
         } 
     }
