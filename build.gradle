@@ -3,41 +3,39 @@ buildscript {
         maven {
             url "http://artefac01adl.claro.amx:8082/artifactory/jcenter"
             allowInsecureProtocol = true
-        }
-    } 
+        }    
+    }
     dependencies {
         //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
+        //classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
+        classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
     }
 }
 
 allprojects {
-    apply plugin: "com.jfrog.artifactory"
+    //apply plugin: "com.jfrog.artifactory"
+    maven {
+            url "http://artefac01adl.claro.amx:8082/artifactory/prassolo-gradle-dev"
+            //allowInsecureProtocol = true
+    }  
 }
 
 artifactory {
-    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
+    contextUrl = "http://artefac01adl.claro.amx:8082/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
         repository {
-            repoKey = 'amb-testing-gradle-gradle-dev-local'
+            repoKey = 'prassolo-gradle-dev-local'
             username = "${artifactory_user}"
             password = "${artifactory_password}"
-            maven = true
-            
+            maven = true        
         }
     }
     resolve {
         repository {
-            repoKey = 'amb-testing-gradle-gradle-release'
+            repoKey = 'prassolo-gradle-dev'
             username = "${artifactory_user}"
             password = "${artifactory_password}"
-            maven = true
-            
+            maven = true         
         }
     }
 }
-//
-
-/*
-
-*/
